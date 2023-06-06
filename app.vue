@@ -1,5 +1,6 @@
 <template>
-	<div class="wrapper py-48 px-4">
+	<div class="px-4 py-48 wrapper">
+		<!-- <NavBar /> -->
 		<NuxtPage />
 	</div>
 </template>

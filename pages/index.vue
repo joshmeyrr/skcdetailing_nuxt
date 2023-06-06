@@ -19,10 +19,10 @@
 		<!-- Package Group -->
 		<div class="flex flex-wrap justify-center gap-4 mt-4">
 			<div class="bg-blue-light p-8 rounded text-center min-w-[18rem]"
-				 v-for="(vehicleType, packageIndex) in vehicleTypes[currentSelection].packages"
+				 v-for="(vehiclePackage, packageIndex) in vehicleTypes[currentSelection].packages"
 				 :key="packageIndex">
 				<div class="">
-					<h2 class="text-xl">{{ vehicleType.title }}</h2>
+					<h2 class="text-xl">{{ vehiclePackage.title }}</h2>
 					<div class="mt-4">
 						<span v-if="currentSelection !== 2"
 							  class="text-4xl font-black">${{
@@ -33,9 +33,9 @@
 							 v-else> Inquire</div>
 					</div>
 					<h3 class="mt-4 text-2xl">Price by Quote</h3>
-					<div class="mt-4 font-black">{{ vehicleType.eta }}</div>
+					<div class="mt-4 font-black">{{ vehiclePackage.eta }}</div>
 					<ul class="mt-4 mb-4">
-						<li v-for="(microservice, microserviceIndex) in vehicleType.microservices"
+						<li v-for="(microservice, microserviceIndex) in vehiclePackage.microservices"
 							:key="microserviceIndex">{{ microservice }}</li>
 					</ul>
 					<div v-if="currentSelection !== 2"
@@ -44,7 +44,7 @@
 
 					<div v-if="currentSelection !== 2"
 						 class="mb-4 ">
-						<div v-for="(addOn, index) in addOns"
+						<div v-for="(addOn, index) in vehiclePackage.addOns"
 							 :key="index">
 							<input :id="addOn.id"
 								   type="checkbox"
@@ -54,7 +54,7 @@
 								   :for="addOn.id">{{ addOn.title }}</label>
 						</div>
 					</div>
-					<a :href="vehicleType.meetingLink"
+					<a :href="vehiclePackage.meetingLink"
 					   target="_blank"
 					   class="px-4 py-2 ml-2 bg-white rounded">Book</a>
 				</div>
@@ -855,6 +855,4 @@ export default {
 	},
 }
 </script>
-<style lang="">
-	
-</style>
+<style lang="css"></style>
