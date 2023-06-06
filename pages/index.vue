@@ -50,9 +50,9 @@
 								   type="checkbox"
 								   :value="addOn.price"
 								   v-model="vehicleTypes[currentSelection].packages[packageIndex].addonPrice">
-							<label class="ml-2"
-								   :for="addOn.id">{{ addOn.title }}</label>
+							<label class="ml-2">{{ addOn.title }}</label>
 						</div>
+						<!-- :for="addOn.id -->
 					</div>
 					<a :href="vehiclePackage.meetingLink"
 					   target="_blank"
